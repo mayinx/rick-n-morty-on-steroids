@@ -6,4 +6,13 @@
   align-items: stretch;
   overflow-y: scroll;
   padding: 1rem;
+  gap: 1.5rem;
+}
+
+.CharactersList__FilterBar .form-control {
+  padding: 0.25rem;
+  border: 5px solid #42aa6d;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: 0.25rem;
 }
