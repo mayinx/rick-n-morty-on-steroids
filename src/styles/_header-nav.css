@@ -1,0 +1,20 @@
+.App__nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.App__nav .NavLink {
+  padding: 1rem;
+  color: var(--nav-item-link-color);
+  text-decoration: none;
+}
+
+.App__nav .active {
+  color: white;
+  background-color: blue;
+}
+
+/* --nav-item-link-color: var(--page-font-color);
+--nav-item-hover-bg-color: var(--secondary-color);
+--nav-item-hover-border-color: var(--tertiary-color);
+--nav-item-hover-font-color: var(--hover-font-color); */
