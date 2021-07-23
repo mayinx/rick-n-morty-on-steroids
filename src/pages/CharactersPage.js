@@ -1,7 +1,7 @@
-export default function Hobbies() {
+export default function CharactersPage() {
   return (
-    <div className="Hobbies">
-      <h1>My infamous hobbies</h1>
+    <div className="App__Page App__CharactersPage">
+      <h1>Characters</h1>
       <ul>
         <li key="1">This</li>
         <li key="2">And</li>

@@ -1,14 +1,16 @@
 import "./App.css";
 import { Switch, Route, NavLink } from "react-router-dom";
-import Home from "../../pages/Home.js";
-import About from "../../pages/About.js";
-import Hobbies from "../../pages/Hobbies.js";
-import Contact from "../../pages/Contact.js";
+import HomePage from "../../pages/HomePage.js";
+import AboutPage from "../../pages/AboutPage.js";
+import CharactersPage from "../../pages/CharactersPage.js";
+import BrandLogo from "../../assets/Rick-and-Morty-PNG-250x250.png";
 
 function App() {
   return (
     <div className="App">
       <header className="App__header">
+        <img id="app_logo" src={BrandLogo} className="BrandLogo" alt=""></img>
+
         <nav className="App__nav">
           <ul>
             <li>
@@ -23,13 +25,8 @@ function App() {
               </NavLink>
             </li>
             <li>
-              <NavLink className="NavLink" to="/hobbies">
-                Hobbies
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="NavLink" to="/contact">
-                Contact
+              <NavLink className="NavLink" to="/characters">
+                Characters
               </NavLink>
             </li>
           </ul>
@@ -38,16 +35,13 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomePage />
           </Route>
           <Route path="/about">
-            <About />
+            <AboutPage />
           </Route>
-          <Route path="/hobbies">
-            <Hobbies />
-          </Route>
-          <Route path="/contact">
-            <Contact />
+          <Route path="/characters">
+            <CharactersPage />
           </Route>
         </Switch>
       </main>

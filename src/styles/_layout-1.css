@@ -1,5 +1,7 @@
 /* Layout-1 */
-/* Simple flex based layout for a classic header - main - footer page, where the main part fills the avaiable space */
+/* Simple flex based layout for a classic header-main-footer page, where the header contains the nav and the main part fills the avaiable space
+
+*/
 .App {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,8 @@ header {
   text-align: center;
   color: var(--header-font-color);
   background-color: var(--header-bg-color);
+  display: flex;
+
   padding: 0.5rem;
   font-size: 1.25rem;
 }
@@ -37,4 +41,21 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main .App__Page {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* TODO: Move to HomePage.css*/
+main .App__Page.App__HomePage {
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+main .App__Page.App__HomePage h3 {
+  align-self: flex-end;
 }

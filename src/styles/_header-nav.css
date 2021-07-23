@@ -1,3 +1,9 @@
+header .BrandLogo {
+  margin-right: auto;
+  width: 75px;
+  height: 75px;
+}
+
 .App__nav {
   display: flex;
   justify-content: space-around;
