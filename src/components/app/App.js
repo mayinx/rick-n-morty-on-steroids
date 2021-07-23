@@ -10,21 +10,31 @@ function App() {
     <div className="App">
       <header className="App__header">
         <nav className="App__nav">
-          <NavLink className="NavLink" to="/">
-            Homee44
-          </NavLink>
-          <NavLink className="NavLink" to="/about">
-            About
-          </NavLink>
-          <NavLink className="NavLink" to="/hobbies">
-            Hobbies
-          </NavLink>
-          <NavLink className="NavLink" to="/contact">
-            Contact
-          </NavLink>
+          <ul>
+            <li>
+              <NavLink className="NavLink" to="/">
+                Home
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className="NavLink" to="/about">
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="NavLink" to="/hobbies">
+                Hobbies
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="NavLink" to="/contact">
+                Contact
+              </NavLink>
+            </li>
+          </ul>
         </nav>
       </header>
-      <div class="left-sidebar">Left Sidebar</div>
       <main>
         <Switch>
           <Route exact path="/">
@@ -41,8 +51,9 @@ function App() {
           </Route>
         </Switch>
       </main>
-      <div class="right-sidebar">Right Sidebar</div>
-      <footer>Lala</footer>
+      <footer>
+        <div>Made with love by Christian Daum</div>
+      </footer>
     </div>
   );
 }

@@ -1,20 +1,55 @@
 .App__nav {
   display: flex;
   justify-content: space-around;
+
+  /* flex: auto; */
 }
 
-.App__nav .NavLink {
-  padding: 1rem;
-  color: var(--nav-item-link-color);
+.App__nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.App__nav ul li {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.App__nav ul li.active,
+.App__nav ul li:hover {
+  background-color: var(--nav-item-hover-bg-color);
+  color: var(--nav-item-hover-font-color);
+  border-radius: 10px;
+  border: 1px solid var(--nav-item-hover-border-color);
+}
+
+.App__nav ul li a {
+  padding: 0.5rem;
+  flex: auto;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
+  color: var(--nav-item-link-color);
+  align-items: center;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  font-size: 1.25rem;
+  /* padding: 1rem; */
 }
 
-.App__nav .active {
-  color: white;
-  background-color: blue;
+.App__nav ul li.active a,
+.App__nav ul li:hover a {
+  color: var(--nav-item-hover-font-color);
 }
-
-/* --nav-item-link-color: var(--page-font-color);
---nav-item-hover-bg-color: var(--secondary-color);
---nav-item-hover-border-color: var(--tertiary-color);
---nav-item-hover-font-color: var(--hover-font-color); */
