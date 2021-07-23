@@ -18,15 +18,14 @@ function App() {
                 Home
               </NavLink>
             </li>
-
-            <li>
-              <NavLink className="NavLink" to="/about">
-                About
-              </NavLink>
-            </li>
             <li>
               <NavLink className="NavLink" to="/characters">
                 Characters
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="NavLink" to="/about">
+                About
               </NavLink>
             </li>
           </ul>
