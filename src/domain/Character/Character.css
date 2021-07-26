@@ -61,9 +61,6 @@ main section.Character.Character--dead a {
   color: white;
 }
 
-/* main section.Character.Character--alive:hover,
-main section.Character.Character--unknown:hover,
-main section.Character.Character--dead:hover */
 main section.Character.Character:hover {
   background-color: #00609d;
   color: white;
@@ -73,15 +70,28 @@ main section.Character.Character:hover a {
 }
 
 main section.Character.Character:hover img {
+}
+main section.Character.Character:hover img {
+  z-index: -1;
   transition: all 0.5s ease-in-out;
   /* TODO: Ask Namir / Martin: This here is supposed
     to prevent flickering of css3-transitions/animations - why is that?*/
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
+main section.Character .character__meta {
+  z-index: 10;
+  transition: all 1s ease-in-out;
+  width: 100%;
+}
 
 main section.Character.Character:hover img {
-  transform: scale(3) translateY(2.15rem);
+  transform: scale(3) translateY(2rem);
+}
+main section.Character.Character:hover .character__meta {
+  background-color: #0303034d;
+  transform: translateY(-2rem);
+  z-index: 10;
 }
 
 main section.Character .character__avatar-wrapper {
@@ -104,11 +114,11 @@ main section.Character .character__avatar-wrapper img {
 /* MEDIA QUERIES */
 
 @media all and (min-width: 400px) {
-  main section.Character {
+  main section.Character__ListItem {
     width: 48%;
   }
 
-  main section.Character .character__avatar-wrapper img {
+  main section.Character__ListItem .character__avatar-wrapper img {
     width: 90%;
     height: 90%;
   }
@@ -122,7 +132,7 @@ main section.Character .character__avatar-wrapper img {
     display: inline-block;
   } */
 
-  main section.Character {
+  main section.Character__ListItem {
     width: 32%;
   }
 }
@@ -132,7 +142,7 @@ main section.Character .character__avatar-wrapper img {
     justify-content: space-between;
   } */
 
-  main section.Character {
+  main section.Character__ListItem {
     width: 23%;
   }
 }
@@ -141,11 +151,11 @@ main section.Character .character__avatar-wrapper img {
 }
 
 @media all and (min-width: 1100px) {
-  main section.Character {
+  main section.Character__ListItem {
     width: 18%;
   }
 
-  main section.Character .character__avatar-wrapper img {
+  main section.Character__ListItem .character__avatar-wrapper img {
     width: 85%;
     height: 85%;
   }

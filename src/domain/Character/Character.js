@@ -20,6 +20,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) =>
   condition ? wrapper(children) : children;
 
 export default function Character({ character, as }) {
+  console.log("char", character);
   const renderAsListItem = as && as === "ListItem";
   return (
     <section

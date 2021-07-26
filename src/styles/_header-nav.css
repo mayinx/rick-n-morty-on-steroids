@@ -1,7 +1,24 @@
 header .BrandLogo {
-  margin-right: auto;
-  width: 75px;
-  height: 75px;
+  /* margin-right: auto; */
+  width: 125px;
+  height: 125px;
+
+  border: 3px solid #3dc5f1;
+  /* border: 3px solid #fff; */
+  /* border: 3px solid #dae8e6; */
+  border: 2px solid aquamarine;
+  border-radius: 100%;
+  background: #3dc5f1;
+  /* background: aquamarine; */
+  /* padding: 2px; */
+
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  /* right: 39px; */
+  z-index: 30;
+
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
 .App__nav {
@@ -20,6 +37,8 @@ header .BrandLogo {
   justify-content: center;
   width: 100%;
   gap: 0.5rem;
+
+  font-family: "Creepster", cursive;
 }
 
 .App__nav ul li {
@@ -29,12 +48,18 @@ header .BrandLogo {
   justify-content: center;
 
   text-align: center;
-  transition: all 0.3s;
-  border: 1px solid transparent;
+  /* transition: all 0.3s;
+  border: 1px solid transparent; */
 }
 
-.App__nav ul li.active,
-.App__nav ul li:hover {
+.App__nav ul li a {
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.App__nav ul li a.active,
+.App__nav ul li a:hover {
   background-color: var(--nav-item-hover-bg-color);
   color: var(--nav-item-hover-font-color);
   border-radius: 10px;
@@ -51,11 +76,11 @@ header .BrandLogo {
   align-items: center;
   /* justify-content: flex-start; */
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   /* padding: 1rem; */
 }
 
-.App__nav ul li.active a,
-.App__nav ul li:hover a {
+.App__nav ul li a.active,
+.App__nav ul li a:hover {
   color: var(--nav-item-hover-font-color);
 }
