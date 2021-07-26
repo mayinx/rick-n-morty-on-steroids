@@ -1,3 +1,23 @@
+.font-creepster {
+  font-family: "Creepster", cursive;
+}
+
+.fs-1 {
+  font-size: 1rem;
+}
+.fs-1_5 {
+  font-size: 1.5rem;
+}
+.fs-2 {
+  font-size: 2rem;
+}
+.fs-2_5 {
+  font-size: 2.5rem;
+}
+.fs-3 {
+  font-size: 3rem;
+}
+
 /* 1. FONT BOLD 16 PX */
 /* used in header h1 */
 .font-bold-16-dark {
@@ -70,6 +90,25 @@
 }
 
 /* utils for margins */
+.mt-0_25 {
+  margin-top: 0.25rem;
+}
+.mt-0_5 {
+  margin-top: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-1_5 {
+  margin-top: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .mb-0_25 {
   margin-bottom: 0.25rem;
 }
