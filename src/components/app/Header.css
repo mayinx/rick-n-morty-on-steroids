@@ -30,7 +30,7 @@ header .App__nav--toggled {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 89px;
+  top: 88px;
   left: 0;
   z-index: 2;
   background-color: #7dfbd4;
@@ -54,7 +54,8 @@ header .App__nav--toggled .NavHeader {
   padding-left: 9.5rem;
   padding-right: 0.5rem;
 
-  border-bottom: 2px solid #49a5c8;
+  border-bottom: 2px solid #2e609d;
+  border-top: 2px solid #2e609d;
 
   background-color: aqua;
 }
