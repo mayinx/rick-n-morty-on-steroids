@@ -6,16 +6,13 @@ export default function CharacterPage() {
   const params = useParams();
   const [resource, setResource] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  console.log("CharacterPage");
-  console.log("params", params);
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character/${params.id}`;
-    console.log("url", url);
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
         setResource(data);
         setIsLoading(false);
       })
@@ -27,9 +24,7 @@ export default function CharacterPage() {
       <h1 className="App__Page__Head">Character Details</h1>
       {console.log("resource", resource)}
       {isLoading || !resource ? (
-        <div className="mt-2 fs-1_5">
-          Holy bullcrap! Can't load that character!
-        </div>
+        <div className="mt-2 fs-1_5">Holy bullcrap! Can't load that character!</div>
       ) : (
         <Character character={resource} />
       )}

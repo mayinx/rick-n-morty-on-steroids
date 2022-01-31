@@ -1,0 +1,54 @@
+main .App__HomePage {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 6.5rem;
+  padding: 0;
+}
+
+main .App__HomePage h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+main .App__HomePage h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+}
+main .App__HomePage .PageLogo {
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
+  min-height: 100px;
+}
+
+@media all and (min-width: 768px) {
+  main .App__HomePage {
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  main .App__HomePage h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  main .App__HomePage h3 {
+    font-size: 1.2rem;
+    align-self: flex-end;
+    text-align: left;
+    font-weight: bold;
+  }
+  main .App__HomePage .PageLogo {
+    max-width: 100%;
+    min-width: 300px;
+    height: auto;
+    min-height: 100px;
+  }
+}

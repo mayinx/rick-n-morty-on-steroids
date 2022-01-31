@@ -1,0 +1,105 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* overflow-y: hidden; */
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  color: var(--header-font-color);
+  background-color: var(--header-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0.75rem 1rem;
+  font-size: 2.5rem;
+
+  position: relative;
+  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+  height: 90px;
+}
+
+main {
+  flex: 1 1 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
+}
+
+main .App__Page {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+main .App__Page__Head {
+  font-weight: normal;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+main .App__Page.App__ResourcePage {
+  padding: 0;
+}
+main .App__Page.App__ResourcesPage {
+  padding: 0 1rem 1rem 1rem;
+}
+
+main .App__Page.App__ResourcesPage .App__Page__Head,
+main .App__Page.App__ResourcePage .App__Page__Head {
+  display: none;
+}
+
+footer {
+  color: var(--footer-font-color);
+  background-color: var(--footer-bg-color);
+
+  margin-top: auto;
+  padding: 1rem;
+
+  font-size: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div {
+  text-align: center;
+}
+
+@media all and (min-width: 776px) {
+  main .App__Page.App__ResourcePage {
+    padding: 1rem;
+  }
+  main .App__Page.App__ResourcePage .App__Page__Head {
+    display: block;
+  }
+}
+@media all and (min-width: 1024px) {
+  main .App__Page.App__ResourcesPage {
+    padding: 1rem;
+  }
+
+  main .App__Page__Head {
+    font-weight: normal;
+    letter-spacing: 10px;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  main .App__Page.App__ResourcesPage .App__Page__Head,
+  main .App__Page.App__ResourcePage .App__Page__Head {
+    display: block;
+  }
+}

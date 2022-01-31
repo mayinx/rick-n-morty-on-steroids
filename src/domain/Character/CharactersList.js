@@ -34,9 +34,7 @@ export default function CharacterList() {
       }
     });
 
-    return apiFilterParams.toString()
-      ? baseUrl + "/?" + apiFilterParams.toString()
-      : baseUrl;
+    return apiFilterParams.toString() ? baseUrl + "/?" + apiFilterParams.toString() : baseUrl;
   }
 
   useEffect(() => {
@@ -58,8 +56,8 @@ export default function CharacterList() {
   }, [filterObject]);
 
   function renderResources() {
-    return resources.map((character) => {
-      return <Character character={character} as="ListItem" />;
+    return resources.map((character, idx) => {
+      return <Character key={idx} character={character} as="ListItem" />;
     });
   }
 
@@ -71,13 +69,9 @@ export default function CharacterList() {
 
   // Custom Hook to determine if the filer bar should be sticky or not
   // const scroll = useScrollHandler(50, document.querySelector("main"));
-  const scroll = useScrollHandler(
-    50,
-    "scrollTop",
-    document.querySelector("main")
-  );
+  const scroll = useScrollHandler(50, "scrollTop", document.querySelector("main"));
 
-  const filertBarClass = `ResourcesList__FilterBar CharactersList__FilterBar ${
+  const filterBarClass = `ResourcesList__FilterBar CharactersList__FilterBar ${
     scroll && "FilterBarSticky"
   }`;
 
@@ -93,10 +87,12 @@ export default function CharacterList() {
     setReloadDataSet(true);
   }
 
+  // TODO: Extract ResourcesFilterBar-Component
   return (
     <section className="ResourcesList CharactersList">
-      <div className={filertBarClass}>
-        <div>
+      <div className={filterBarClass}>
+        <div className="ListItemsCount">{pluralize("Character", Number(resourcesCount), true)}</div>
+        <div className="ListFilterOptions">
           <select
             id="status-filter"
             className="character-filter form-control"
@@ -122,22 +118,17 @@ export default function CharacterList() {
             <option value="Human">Human</option>
             <option value="Alien">Alien</option>
           </select>
+          <input
+            id="name-filter"
+            type="text"
+            className="character-filter form-control"
+            name="name"
+            placeholder="Character name"
+            onChange={handleFilterInputChange}
+          />
         </div>
-        <div className="ListItemsCount">
-          {pluralize("Character", Number(resourcesCount), true)}
-        </div>
-        <input
-          id="name-filter"
-          type="text"
-          className="character-filter form-control"
-          name="name"
-          placeholder="Character name"
-          onChange={handleFilterInputChange}
-        />
       </div>
-      <div className="ResourcesList__Items CharactersList__Items">
-        {renderResources()}
-      </div>
+      <div className="ResourcesList__Items CharactersList__Items">{renderResources()}</div>
       {filterObject.page < totalPages && (
         <button
           className="CharactersList__LoadMoreButton btn green rounded"

@@ -11,11 +11,11 @@
 }
 .CharactersList__FilterBar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
-  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px,
-    rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+  box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
   background-color: var(--senary-color);
   border-radius: 6px;
   padding: 0.5rem;
@@ -24,7 +24,36 @@
 }
 
 .CharactersList__FilterBar .ListItemsCount {
+  display: flex;
+  align-items: center;
   font-size: 1.25rem;
+  height: 55px;
+  justify-content: right;
+  padding: 0 1rem;
+}
+
+.CharactersList__FilterBar.FilterBarSticky .ListItemsCount {
+  padding-left: 9rem;
+  height: 75px;
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 1px solid;
+  border-color: whitesmoke;
+}
+.CharactersList__FilterBar .ListFilterOptions {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem 1rem;
+}
+.CharactersList__FilterBar .ListFilterOptions > * {
+  width: auto;
+}
+
+.CharactersList__FilterBar.FilterBarSticky .ListFilterOptions {
+  padding: 0.75rem 1.25rem;
 }
 
 .CharactersList__FilterBar .form-control {
@@ -35,19 +64,22 @@
   margin: 0.25rem;
 
   font-family: "Creepster", cursive;
+  font-size: 1.1rem;
   letter-spacing: 2px;
-  width: 10rem;
+  width: auto;
   font-weight: normal;
 }
 
 .CharactersList__FilterBar.FilterBarSticky {
   position: absolute;
-  top: 89px;
+  top: 88px;
   left: 0;
   width: 100vw;
   z-index: 1;
   border-radius: 0;
-  padding-left: 10rem;
+  /* padding-left: 10rem; */
+  flex-direction: column;
+  padding: 0;
 }
 
 .CharactersList__FilterBar.FilterBarSticky + .CharactersList__Items {
@@ -68,4 +100,35 @@
   font-size: 1.5rem;
   font-family: "Creepster", cursive;
   letter-spacing: 3px;
+}
+
+@media all and (min-width: 400px) {
+  .CharactersList__FilterBar .ListItemsCount {
+    font-size: 1.5rem;
+  }
+}
+@media all and (min-width: 576px) {
+  .CharactersList__FilterBar .ListFilterOptions {
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .CharactersList__FilterBar .ListFilterOptions > * {
+    width: 100%;
+  }
+
+  .CharactersList__FilterBar .ListItemsCount {
+    font-size: 2rem;
+  }
+
+  .CharactersList__FilterBar .form-control {
+    /* width: 10rem; */
+  }
+}
+
+@media all and (min-width: 768px) {
+  .CharactersList__FilterBar .ListItemsCount {
+    justify-content: center;
+  }
 }

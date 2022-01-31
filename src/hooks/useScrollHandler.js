@@ -22,7 +22,7 @@ export const useScrollHandler = (
   const [scroll, setScroll] = useState(false);
 
   const scrollCnt = scrollCntEl || window;
-  const useScrollY = scrollPropery === "scrollY";
+  // const useScrollY = scrollPropery === "scrollY";
 
   // on mount
   useEffect(() => {

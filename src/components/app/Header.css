@@ -1,0 +1,170 @@
+header .BrandLogo {
+  width: 125px;
+  height: 125px;
+
+  border: 3px solid #3dc5f1;
+  border: 2px solid aquamarine;
+
+  border-radius: 100%;
+  background: #3dc5f1;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 30;
+
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+header .App__nav {
+  justify-content: space-around;
+
+  position: static;
+  display: none;
+  margin-left: auto;
+  padding: 0;
+  width: auto;
+}
+
+header .App__nav--toggled {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 89px;
+  left: 0;
+  z-index: 2;
+  background-color: #7dfbd4;
+  background-color: var(--header-bg-color);
+  background-color: var(--senary-color);
+  background-color: hsl(208deg 73% 75%);
+  background-color: #59c5f1;
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+  width: 100vw;
+}
+
+header .App__nav--toggled .NavHeader {
+  display: flex;
+  justify-content: end;
+  height: auto;
+  min-height: 5rem;
+
+  padding: 0.75rem 0;
+  padding-left: 9.5rem;
+  padding-right: 0.5rem;
+
+  border-bottom: 2px solid #49a5c8;
+
+  background-color: aqua;
+}
+
+header .App__nav .NavHeader .NavLogo {
+  width: 100%;
+  height: 100%;
+}
+
+header .navToggle {
+  transition: all 0.5s;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  display: flex;
+  padding: 0.5rem;
+  margin-left: auto;
+  font-size: 3rem;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid transparent;
+
+  color: #2e609d;
+
+  background-color: #97d8f2;
+}
+
+header .navToggle--toggled,
+.navToggle:hover {
+  background-color: var(--nav-toggle-hover-bg-color);
+  color: var(--nav-toggle-hover-font-color);
+
+  border-radius: 10px;
+  border: 1px solid var(--nav-item-hover-border-color);
+}
+
+header .App__nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+  font-family: "Creepster", cursive;
+}
+
+header .App__nav ul li {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+header .App__nav ul li a {
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.5rem;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--nav-item-link-color);
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+header .App__nav ul li a.active,
+header .App__nav ul li a:hover {
+  background-color: var(--nav-item-hover-bg-color);
+  color: var(--nav-item-hover-font-color);
+  border-radius: 10px;
+  border: 1px solid var(--nav-item-hover-border-color);
+}
+
+header .App__nav--toggled ul li a.active,
+header .App__nav--toggled ul li a:hover {
+  background-color: var(--mobile-nav-item-hover-bg-color);
+  color: var(--mobile-nav-item-hover-font-color);
+  border-radius: 10px;
+  border: 1px solid var(--nav-item-hover-border-color);
+}
+
+header .App__nav--toggled ul {
+  flex-direction: column;
+  padding: 1rem;
+}
+
+@media all and (min-width: 768px) {
+  header .App__nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+    box-shadow: none;
+  }
+  header .App__nav .NavHeader {
+    display: none;
+  }
+  header .App__nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+  header .navToggle {
+    display: none;
+  }
+}

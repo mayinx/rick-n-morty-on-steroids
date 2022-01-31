@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 // accept code blocks (here jsx) a last argument like in ruby blocks?!
 // (I'm refering to the last parameter here - "children" )
 //
-// EDIT: Found the answer myself (same source): "...the children prop is actually a React feature.
-// Each component receives an implicit prop called children that contains all the elements contained
+// EDIT: Found the answer myself (same source): "...the 'children' prop is actually a React feature.
+// Each component receives an implicit prop called 'children' that contains all the elements contained
 // between the opening tag and the closing tag where it is called."
 //
 // That's more or less similar to Ruby Blocks, which can be passed as implicit last argument to a method...
@@ -20,7 +20,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) =>
   condition ? wrapper(children) : children;
 
 export default function Character({ character, as }) {
-  console.log("char", character);
+  // console.log("char", character);
   const renderAsListItem = as && as === "ListItem";
   return (
     <section
