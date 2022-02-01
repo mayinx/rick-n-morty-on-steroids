@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import Character from "./Character.js";
 import { useScrollHandler } from "../../hooks/useScrollHandler.js";
 
+import pluralize from "pluralize";
+
 export default function CharacterList() {
-  const pluralize = require("pluralize");
+  // const pluralize = require("pluralize");
 
   const [resources, setResources] = useState([]);
   const [resourcesCount, setResourcesCount] = useState(0);
@@ -77,7 +79,7 @@ export default function CharacterList() {
 
   // uh - ah
   function handleFilterInputChange(e) {
-    // console.log("fired filter + val:", e.target.name, e.target.value);
+    console.log("fired filter + val:", e.target.name, e.target.value);
     setFilterObject({
       ...filterObject,
       [e.target.name]: e.target.value,
@@ -99,7 +101,7 @@ export default function CharacterList() {
             name="status"
             onChange={handleFilterInputChange}
           >
-            <option select value="">
+            <option select={1} value="">
               -- all statuses --
             </option>
             <option value="Alive">Alive</option>
@@ -112,7 +114,7 @@ export default function CharacterList() {
             name="species"
             onChange={handleFilterInputChange}
           >
-            <option select value="">
+            <option select={1} value="">
               -- all species --
             </option>
             <option value="Human">Human</option>
